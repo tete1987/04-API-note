@@ -46,5 +46,6 @@
 5）更多示例介绍：
 https://home.testing-studio.com/t/topic/1065
 
-![image](49711FD353014C1AAA7ECE74F3139249)
+![curl](https://github.com/tete1987/picture_resource/blob/master/curl.png)
+
 
