@@ -56,7 +56,7 @@ def hellp():
 
 将得到的文件进行比对：
 
-![image](FDDE95C74ACA4FB0A8F32EA19225F4BC)
+![对比](https://github.com/tete1987/picture_resource/blob/master/Http%E5%9B%BE/%E5%AF%B9%E6%AF%94.png)
 
 3.get与post的区别总结：
 
