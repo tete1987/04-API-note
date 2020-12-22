@@ -7,7 +7,7 @@
 3.分析工具：curl，postman，chromeDevtool
 
 ## （二）网络模型
-![image](3BA09E187B0F4F608C392FB44E77F272)
+![网络协议1](https://github.com/tete1987/picture_resource/blob/master/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE1.png)
 
 1.网络模型：
 
@@ -23,14 +23,15 @@
 
 1.设置http代理端口与socks代理端口，“Proxy——Proxy Setting”
 
-![image](6EBBF262388F4F5997109A9FC7C6B8C8)
+![Charles01](https://github.com/tete1987/picture_resource/blob/master/Http%E5%9B%BE/Charles01.png)
 
 2.在网络中也同样设置代理端口：
-![image](186DAD5234EB450AB8548B8EE09402CB)
 
-![image](A54F5E84CA874D12A7C1365B86B5973C)
+![Charles02](https://github.com/tete1987/picture_resource/blob/master/Http%E5%9B%BE/Charles02.png)
 
-![image](8E7BCAAD7DA4406EAEFED4FA76D5675A)
+![Charles03](https://github.com/tete1987/picture_resource/blob/master/Http%E5%9B%BE/Charles03.png)
+
+![Charles04](https://github.com/tete1987/picture_resource/blob/master/Http%E5%9B%BE/Charles04.png)
 
 
 3.Charles面板功能：
@@ -46,15 +47,17 @@
 - 两个功能主要是将接口的信息保存成各种类型的文件，以便在其他工具中进行分析。
 
 ②Highlight Rules功能：主要是将关注的接口以其他颜色标注出来，比较醒目。
-![image](5F1EFC88644D4D988C60291F179FC55B)
+![Charles05](https://github.com/tete1987/picture_resource/blob/master/Http%E5%9B%BE/Charles05.png)
 
 ③ Focused Hosts功能：将关注的接口以分类显示出来，其他不关注的接口都显示在“Other Hosts”中。
 
-![image](87D65F4BB0EA4FE3B608073FE33D1664)
+![Charles06](https://github.com/tete1987/picture_resource/blob/master/Http%E5%9B%BE/Charles06.png)
 
 ④Viewer Mappings：可设置一些跨语言开发时用到的规则等。
 
-![image](E0E31C6D157B426EB7A6B48C01603F56)
+
+![Charles07](https://github.com/tete1987/picture_resource/blob/master/Http%E5%9B%BE/Charles07.png)
+
 
 Proxy 菜单包含以下功能：
 - Start/Stop Recording：开始/停止记录会话。
@@ -77,16 +80,18 @@ Proxy 菜单包含以下功能：
 1）对称秘钥算法：数据加密和解密时使用同样的密钥。
 - 速度快：大量信息
 
-![image](AD89DDEFAECC433BBC010E448EA32449)
+![Charles08](https://github.com/tete1987/picture_resource/blob/master/Http%E5%9B%BE/Charles08.png)
 
 2）非对称秘钥算法：数据加密和解密时使用不同的密钥。
 - 速度慢：数字签名
 
-![image](E564D26C192240A184B2BC0E2DAFA0EF)
+![Charles09](https://github.com/tete1987/picture_resource/blob/master/Http%E5%9B%BE/Charles09.png)
 
 3）仅验证server的ssl 握手
 
-![image](B6DE016F4DCF4EDBBD65CABA7736D34F)
+
+![Charles10](https://github.com/tete1987/picture_resource/blob/master/Http%E5%9B%BE/Charles010.png)
+
 
 握手过程解析：
 
@@ -110,4 +115,4 @@ Proxy 菜单包含以下功能：
 
 4）Charles工作原理：
 
-![image](02D14A4048474A8A9A5CAB83B590F981)
+![Charles11](https://github.com/tete1987/picture_resource/blob/master/Http%E5%9B%BE/Charles011.png)
