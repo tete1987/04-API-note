@@ -70,7 +70,79 @@
 4）Thrift：与gRPC类似的多语言RPC框架，Apache开源项目
 
 
-- [03 接口协议分析](https://github.com/tete1987/07-API/blob/master/03%20%E6%8E%A5%E5%8F%A3%E5%8D%8F%E8%AE%AE%E5%88%86%E6%9E%90.md)
+## 三、接口协议分析
+### 1.协议分析工具
+1）网络监听：TcpDump + WireShark
+
+2）代理Proxy：
+- 推荐工具：手工测试Charles[全平台]、安全测试burpsuite[全平台 java]
+- 自动化测试：mitmproxy
+- 其他代理：fiddler[仅Windows]、AnyProxy[全平台]
+
+3）协议客户端工具：curl、postman
+
+2.tcpdump
+
+1）参数：
+
+-  -x： 十六进制展示
+-  -w file：保存文件
+
+2）表达式
+- ip tcp：协议
+- host：主机名
+- port：80
+- src：来源dst目的
+- and or ()：逻辑表达式
+- 
+3）案例：抓取访问百度的数据包
+`sudo tcpdump host www.baidu.com -w/tmp/tcpdump.log`
+
+curl http://www.baidu.com
+
+停止 tcpdump
+
+使用wireshark 打开/tmp/tcpdump.log
+
+
+示例：
+
+1）在终端输入：(如果系统里没有tcpdump的话，还需要先安装，使用命令：yum install -y tcpdump)
+
+`sudo tcpdump host www.baidu.com -w/tmp/tcpdump/log`
+
+注：以上命令在linux服务器上执行之后未生成对应log文件，在网上找了另外一个命令，可正常生成：
+
+`tcpdump -i ens33 -w test.pcap`
+
+2）打开另一个终端输入： `curl http://www.baidu.com   `
+
+3）回到第一个窗口停止tcpdump
+
+4）使用wireShark打开log文件
+
+![接口协议](https://github.com/tete1987/picture_resource/blob/master/%E6%8E%A5%E5%8F%A3%E5%8D%8F%E8%AE%AE.png)
+
+#### 三次握手原理：
+
+1）发送端首先发送一个带有SYN（synchronize）标志地数据包给接收方。
+
+2）接收方接收后，回传一个带有SYN/ACK标志的数据包传递确认信息。
+
+3）最后，发送方再回传一个带有ACK标志的数据包，表示’握手‘结束。
+
+#### 四次挥手：
+
+4）第一次挥手：Client发送一个FIN，用来关闭Client到Server的数据传送，Client进入FIN_WAIT_1状态。
+
+5） 第二次挥手：Server收到FIN后，发送一个ACK给Client，确认序号为收到序号+1（与SYN相同，一个FIN占用一个序号），Server进入CLOSE_WAIT状态。
+
+6）第三次挥手：Server发送一个FIN，用来关闭Server到Client的数据传送，Server进入LAST_ACK状态。
+
+7）第四次挥手：Client收到FIN后，Client进入TIME_WAIT状态，接着发送一个ACK给Server，确认序号为收到序号+1，Server进入CLOSED状态，完成四次挥手
+
+
+# 其他笔记链接
 - [04 Postman详解](https://github.com/tete1987/07-API/blob/master/04%20Postman%E8%AF%A6%E8%A7%A3.md)
 - [05 开发、测试工程师必备工具-curl](https://github.com/tete1987/07-API/blob/master/05%20%E5%BC%80%E5%8F%91%E3%80%81%E6%B5%8B%E8%AF%95%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%BF%85%E5%A4%87%E5%B7%A5%E5%85%B7-curl.md)
 - [06 开发测试工程师必备工具charles](https://github.com/tete1987/07-API/blob/master/06%20%E5%BC%80%E5%8F%91%E6%B5%8B%E8%AF%95%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%BF%85%E5%A4%87%E5%B7%A5%E5%85%B7charles.md)
